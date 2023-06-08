@@ -10,6 +10,7 @@ public class Question
 	public string IncorrectAnswer2 { get; set; }
 	public string IncorrectAnswer3 { get; set; }
 	public string IncorrectAnswer4 { get; set; }
+	public string ChoosenAnswer { get; set; }
 
 	public bool Correct { get; set; }
 	public int NumberOfCorrectAnswer { get; set; }

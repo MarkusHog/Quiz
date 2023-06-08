@@ -1,9 +1,59 @@
 ﻿@page "/"
+@using Quiz.Models
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code
+{
+	Question question = new Question();
+
+	List<Question> questions = new List<Question>();
+
+	
+
+	protected override void OnInitialized()
+	{
+		questions = new List<Question>()
+		{
+			new Question()
+			{
+				Id = new Guid(),
+				QuizQuestion = "Vilken är världens största öken?",
+				CorrectAnswer = "Sahara",
+				IncorrectAnswer1 = "",
+				IncorrectAnswer2 = "",
+				IncorrectAnswer3 = "",
+				IncorrectAnswer4 = "",
+				Correct = false,
+				NumberOfCorrectAnswer = 0
+			},
+			new Question()
+			{
+				Id = new Guid(),
+				QuizQuestion = "Vad heter europas högsta berg?",
+				CorrectAnswer = "Sahara",
+				IncorrectAnswer1 = "",
+				IncorrectAnswer2 = "",
+				IncorrectAnswer3 = "",
+				IncorrectAnswer4 = "",
+				Correct = false,
+				NumberOfCorrectAnswer = 0
+			},
+			new Question()
+			{
+				Id = new Guid(),
+				QuizQuestion = "Vad är världens största djur",
+				CorrectAnswer = "Blåval",
+				IncorrectAnswer1 = "",
+				IncorrectAnswer2 = "",
+				IncorrectAnswer3 = "",
+				IncorrectAnswer4 = "",
+				Correct = false,
+				NumberOfCorrectAnswer = 0
+			}
+		};
+		
+	}
+}

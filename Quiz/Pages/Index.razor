@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using Quiz.Models
+@using Quiz.Data
+@inject IRestDataService IRestDataService
 
 <PageTitle>Quiz</PageTitle>
 
@@ -92,10 +94,10 @@ else
     //    };
     //}
 
-	protected override Task OnInitializedAsync()
+	protected override async Task OnInitializedAsync()
 	{
-        questions =
-		return base.OnInitializedAsync();
+		questions = await IRestDataService.GetAllQuestionAsync();
+		
 	}
 
 	bool IsAnswerSelected(Question question, string answer)

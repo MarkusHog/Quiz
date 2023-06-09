@@ -8,10 +8,10 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["*.csproj", "."]
-RUN dotnet restore "*QuizAPI.csproj"
+RUN dotnet restore "QuizAPI.csproj"
 COPY . .
 WORKDIR "/src/"
-RUN dotnet build "QuizAPI.csproj" -c Release -o /app/build
+RUN dotnet build "Quiz.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "QuizAPI.csproj" -c Release -o /app/publish /p:UseAppHost=false

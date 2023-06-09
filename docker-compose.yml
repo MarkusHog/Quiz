@@ -8,9 +8,16 @@ services:
     depends_on:
       - "QuizAPI"
     build:
-      context: .
-      dockerfile: Quiz/Dockerfile
+      context: ./Quiz
+      dockerfile: Dockerfile
+    ports:
+      - 80:80   
 
 
   QuizAPI:
     image: markus228/QuizAPI:latest
+    build:
+      context: .
+      dockerfile: Quiz/Dockerfile
+    ports: 
+      - 8080:8080 

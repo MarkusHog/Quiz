@@ -14,7 +14,7 @@ public class RestDataService : IRestDataService
     public RestDataService()
     {
         _httpClient = new HttpClient();
-        _baseAdress = "https://quizapi.internal.gentlebush-8ad4885e.westeurope.azurecontainerapps.io/";
+        _baseAdress = "https://quizapi.internal.gentlebush-8ad4885e.westeurope.azurecontainerapps.io";
         _url = $"{_baseAdress}/questions";
 
         _jsonSerializerOptions = new JsonSerializerOptions

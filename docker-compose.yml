@@ -1,8 +1,16 @@
 version: '3.4'
 
+
+
 services:
   quiz:
     image: ${DOCKER_REGISTRY-}quiz
+    depends_on:
+      - "QuizAPI"
     build:
       context: .
       dockerfile: Quiz/Dockerfile
+
+
+  QuizAPI:
+    image: markus228/QuizAPI:latest
